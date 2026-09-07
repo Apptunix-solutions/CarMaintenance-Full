@@ -22,7 +22,7 @@ jobs:
       
     - run: dotnet test --configuration Release --no-restore /p:CollectCoverage=true /p:CoverageFormat=cobertura
       
-    - uses: codecov/codecov-action@v3
+    - uses: codecov/codecov-action@v7
       with:
         files: '**/coverage.cobertura.xml'
         flags: backend
@@ -42,7 +42,7 @@ jobs:
         
     - run: cd ClientApp && npm ci && npm run test:ci
       
-    - uses: codecov/codecov-action@v3
+    - uses: codecov/codecov-action@v7
       with:
         files: './ClientApp/coverage/cobertura-coverage.xml'
         flags: frontend
